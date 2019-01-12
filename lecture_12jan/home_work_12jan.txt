@@ -1,0 +1,6 @@
+1. write a prog to accept url and return domain name.
+
+2. operators 2nd presentation from github (www.github.com/jeetendrabhattad/python)
+
+3. Write a prog to accept string from user replace all occurancees of first character with * in remaining part of string. 
+(eg. babble -> ba**le)
