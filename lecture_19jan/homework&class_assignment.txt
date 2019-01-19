@@ -1,0 +1,23 @@
+class Assignment :: 
+1. WAP to accept 2 numbers from user and subtract minimum from maximum.
+
+2. WAP to accept 3 numbers from user and print maximum one
+
+3. WAP to accept  sentence from user and replace the 'not bad' construct if found with 'good'
+	eg. "Aus played not that bad still loose" ==> "Aus played good still loose"
+	hint : find not slice -- separate string after not and replace with good
+
+4. WAP to accept a string from user and perform verbing operations on it. 
+(rules : 1. len shld be gt or eq 3
+	2. add ing to its end
+	3. if ending in ing replace with ly
+	4. if len lt 3 then string unchanged)
+
+
+
+Homework :: 
+1. WAP to accept 3 numbers from user and print minimum of them
+2. WAP rewrite validation of rotation of string with if-else
+3. WAP to accept number of donuts as an input, if no of donuts are gt than 10 then print "No of donuts: many" else print "No of donuts: count" --- actual count
+4. WAP to accept a string from user and return a string having first 2 and last 2 chars in string
+eg. string ==> stng
