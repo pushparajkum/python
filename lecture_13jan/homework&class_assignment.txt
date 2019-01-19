@@ -1,0 +1,7 @@
+wap to accept str from user and jumble in such a way that from begining alternate characters from begining are considered in first part  anfd second part contains starting from second one.
+
+1. w.a.p.  to accept a string from user and check if it starts with 'T'.
+
+2. WAP to accept 2 strings from user and check if secnd string is rotation of first. (no loops)
+eg. manager -> germana
+3. WAP to accept a string from user and convert it to lowercase, uppercase
