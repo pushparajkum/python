@@ -1,0 +1,15 @@
+1. wap to accept a number from user and chk if it is palindrome or not..
+
+2. wap to accept a string from user and chk if it is palindrome or not..
+
+3. wap to convert arithmatic.py into menu driven program..
+
+4. wap to accept a number from user and check if it is prime or not.. (hint :: starrting from 2 to half of that number and if its even number return false,... else... start with 3 and step value 2)
+
+5. wap to print following pattern (hint :: print stmt bydefault takes to newline -- print('*', end=''))
+*
+* *
+* * * 
+* * * *
+
+6. read args passing notes
