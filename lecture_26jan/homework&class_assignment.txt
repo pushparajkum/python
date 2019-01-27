@@ -1,0 +1,7 @@
+1. wap to accept an integer from user and print its table.
+
+2. wap to accept n from user and print tables from 2 to n.
+
+3. wap to accept number from user and factorial of it.
+
+All the programs did till now move to functions....
