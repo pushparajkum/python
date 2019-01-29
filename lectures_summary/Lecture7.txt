@@ -1,0 +1,112 @@
+27/01/19
+
+** Revision **
+Control Flow
+1. Sequencing
+2. Selection
+- If
+- if, elif, elfi, else
+- if, else
+3. Repetition
+- Logically controlled
+eg. While
+- Enumeration controlled
+eg. for
+4. Jump Statements
+- break -> breaks the repetition
+- continue -> skips the further statements in repetition & continues to next iteration
+- return -> returns control to caller
+5. Functions
+6. Recursion 
+
+
+--
+#!/usr/bin/python
+def main():
+	print ("it's an entry point function")
+	
+__name__	-> global variable defined by per python script. Every module has this variable. It can have 2 values
+
+When python script is run as a executable it runs as "__main__". If it is run as re-usable module, we have to import that file. That time __name__ returns the file name.
+
+i. if __name__ == '__main__':
+	main()
+	
+ii. 
+>>> import entry_point
+>>> entry_point.main()
+it's an entry point function
+>>> entry_point.__name__
+'entry_point'
+>>>
+
+**
+Parameter Passing
+
+1. Positional arguments
+def add(a,b):
+	return a+b 
+add(10,20)
+
+2. Keyword arguments
+add(b=10,a=10)
+
+def add(a,b,c):
+	return a+b+c
+add(20,c=30,b=10)	->	correct
+add(20,c=30,40)		->	incorrect
+
+
+* Write an arithmetic.py, it contains add, substract, multiple and division functions.
+	#!C:\Python27\python.exe
+
+	print ("Free fall code at begin")
+
+	def add(num1,num2):
+		sum = num1 + num2
+		print "Sum of two numbers is : ", sum
+		
+	def substract(num1,num2):
+		sub = num2 - num1
+		print "Difference between two numbers is : ", sub
+
+	def multiple(num1,num2):
+		mul = num1 * num2
+		print "Multiplication of two number is : ", mul
+		
+	def divide(num1,num2):
+		div = num2 / num1
+		print "Division of two number is : ", div
+		
+	def main():
+		num1 =  input("Please enter first number : ")
+		num2 = input("Please enter second number : ")
+		add(num2=30,num1=10)
+		substract(num1,num2)
+		multiple(num1,num2)
+		divide(num1,num2)
+
+	if __name__ == '__main__':
+		main()
+
+Assignments:
+1. WAP to accept a number from user, and check if it is palindrome or not?
+Hint: reverse of number is exactly same
+2. WAP to accept a string from user, and check if it is palindrome or not?
+3. WAP to convert arithmetic.py into menu driven program.
+4. WAP to accept a number from user and check if it is prime or not?
+Hint: Start from 2, any divisor is till its half. It its an even number then don't start the loop. Loop should start from 3, and use step value as 2 upto number/2.
+5. WAP to print following pattern
+	*
+	*	*
+	*	*	*
+	*	*	*	*
+Hints: Print statement by default takes you to new line, so use 
+Python2.7 -> print '*',
+Python3.x -> print ('*',end='')
+
+** Read second presentation.
+
+
+ 
+

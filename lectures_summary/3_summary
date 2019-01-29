@@ -1,0 +1,162 @@
+Python's help manual:
+__<method>__ These are operator overloaded methods.
+
+String class methods:
+capitalize(): Capitalize first character
+count(<substr>): Count occurences of substring
+replace(old, new): Replace old string with new
+
+>>> s="sushil"
+>>> print (s);
+sushil
+>>> s.capitalize();
+'Sushil'
+>>> s.count('e');
+0
+>>> s.count('s');
+2
+>>> s.count('S');
+0
+>>> s.replace('s','*');
+'*u*hil'
+>>> s[0]+s[1:].replace(s[0], '*');
+'su*hil'
+>>> s="babble"
+>>> s[0]+s[1:].replace(s[0], '*');
+'ba**le'
+
+WAP to accept a string from user and jumble it in such a way that:
+e.g. Input="jeetendra" Output="jeedaetnr"
+>>> s="jeetendra"
+>>> s[::2]
+'jeeda'
+>>> s[::2]+s[1::2]
+'jeedaetnr'
+
+e.g. Input="jeetendra" Output="adeejrnte"
+>>> s[::-2]+s[-2::-2]
+'adeejrnte'
+
+Containers:
+list: Dynamically growing mutable array of heterogeneous elements
+tuple: Immutable/Constant list
+set: Unique elements
+disctionary: Associative array
+
+----------------------------------------------------------------------------------------------------
+Operators:
+1) Arity of operator: Number of operands required for operator
+   Unary or binary. There is no ternary operator in Python.
+2) Precedence: Priority (BODMAS)
+3) Associativity: When Precedence is same associativity comes into picture.
+                  R-->L OR L-->R
+		  R-->L: Unary, Combinational assignments, (Ternary)
+
+Arithmatic Operators: Unary + Binary
+Python doesn't support pre/post increment operators.
+a++ gives syntax error, but ++a doesn't, because it breaks it down as unary plus operator twice.
+++a: (+(+a))
+>>> a++
+  File "<stdin>", line 1
+    a++
+      ^
+SyntaxError: invalid syntax
+>>> ++a
+10
+>>> +a
+10
+>>> --a
+10
+>>> +-a
+-10
+
+Double slash(//) is a flooring operator.
+>>> 5/2.0
+2.5
+>>> 5//2.0
+2.0
+
+Double star (**) is exponential operator.
+>>> 5**3
+125
+
+------------------------------------------------------------------
+Relational Operators: Have low precendence than arithmatic operators
+>, <, >=, <=, !=, ==, <> (Not equal to, depricated in 3.x)
+
+------------------------------------------------------------------
+Logical Operators:
+Python use keywords - {and, or, not} for logical operators instead of symbols - {&&, ||, !}
+WAP to get XOR behavior using logical operators.
+1 1 --> 0
+1 0 --> 1
+0 1 --> 1
+0 0 --> 0
+!(p and q) and (p or q)
+
+------------------------------------------------------------------
+Membership operator: 'in' & 'not in'.
+>>> 'j' in 'jeetendra'
+True
+>>> 'k' in 'jeetendra'
+False
+>>> 'k' not in 'jeetendra'
+True
+>>> 'j' not in 'jeetendra'
+False
+
+Work on all containers:
+>>> 5 in 15
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: argument of type 'int' is not iterable
+>>> 5 in {15}
+False
+>>> 5 in {15, 5}
+True
+>>> 5 in {15, 51}
+False
+------------------------------------------------------------------
+
+Identity: 'is' and 'is not'
+Assignment(==) compares the value whereas identity operators compares memory (id()).
+>>> a=1000
+>>> b=a
+>>> c=1000
+>>> a==b
+True
+>>> b==c
+True
+>>> a is b
+True
+>>> a is c
+False
+>>> b is c
+False
+>>> id(a), id(b), id(c)
+(4403001904, 4403001904, 4403002416)
+>>> b is  not c
+True
+>>> a is not b
+False
+------------------------------------------------------------------
+
+Bitwise Operators:
+1) &: Used to turn off bit/bits
+    0110110111
+  & 1111111001
+    ----------
+    0110110001
+
+2) |: Unsed to turn on bit/bits
+3) ^: Toggle bit/bits
+4) ~: bit/bits inversion
+5) << (Left shift): Multiplication by power of 2.
+6) >> (Right shift): Division by power of 2.
+Arithmatic right shift: (negative numbers - 1 is carried in)
+logical right shift: (positive numbers - 0 is carried in)
+
+WAP to accept a string from user and check if it starts with capital 'T'.
+WAP to accept two strings from user and check if second string is rotation of first.
+e.g. manager and germana is rotation
+WAP to accept a string and convert it to lowercase, uppercase.

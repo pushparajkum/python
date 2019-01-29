@@ -1,0 +1,152 @@
+
+Language evolution:
+H/W --> Binary language --> Assembly language --> Low level languages --> middle level -> high level
+
+Compilation phases:
+Tokanization --> Syntax validation --> Symantic Analysis --> Intermediate code --> Code optimization --> Target code
+
+Android does ahead of time compilation.
+
+C, C++: Compiled
+Shell Script, PHP: Interpreted
+Java, .Net, Python: Compiled + Interpreted
+
+Python is dynamically typed language. Type of variable is changing dynamically.
+C, C++ are statically typed language.
+
+Pyhton data models:
+1) Value model:
+int a = 10;
+int b = a; // Here value of 'a' is assigned to 'b';
+
+2) Reference Model:
+int a = 10;
+int *p = &a; // Here 'p' is pointer to 'a'
+
+In C and C++, operator '&' and '*' are used for reference model.
+Pyhthon and Java by default follow reference model without using '&' and '*'.
+Python performs automatic garbage collection. It uses reference counting mechanism with cyclic reference detection.
+
+$ python
+Python 3.7.0 (default, Aug 22 2018, 15:22:33)
+[Clang 9.1.0 (clang-902.0.39.2)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a=1000
+>>> id(a),a
+(4484050800, 1000)
+>>> b=a
+>>> id(b),b
+(4484050800, 1000)
+>>> c=1000
+>>> id(c),c
+(4484050768, 1000)
+>>>
+
+a,b are pointing to same location.
+c is another object and having different location.
+When we again assign 'a' to 'c', now 'c' also points to same location as 'a' and 'b'.
+
+Note: The id() function returns identity of the object. This is an integer which is unique for the given object and remains constant during its lifetime.
+
+Behavior of reference model is different while operating on primitive data types and containers.
+
+Python interpreter by default allocates memory for numbers from -5 to 256. Hence when we assign value from this range to any variable, their id's are same.
+>>> a=216
+>>> b=a
+>>> c=216
+>>> id(a),id(b), id(c)
+(4481473280, 4481473280, 4481473280)
+>>> a=999
+>>> b=a
+>>> c=999
+>>> id(a),id(b), id(c)
+(4484050800, 4484050800, 4482367440)
+>>> a=-6
+>>> b=a
+>>> c=-6
+>>> id(a),id(b), id(c)
+(4484050736, 4484050736, 4484050800)
+
+Java: Value model for primitive data types, reference model for class types
+
+Python supports 'complex' data type as well.
+>>> x=1+2j
+>>> type(x)
+<class 'complex'>
+
+String:
+There is no character constant in python. Single character also need to represent as string.
+Python supports negative indexing to access string.
+String is immutable container. It is not allowed to change one of the value in that container.
+
+>>> str1="test";
+>>> str1[0];
+'t'
+>>> str1[1];
+'e'
+>>> str1[-1];
+'t'
+>>> str1[-0];
+'t'
+>>> str1[-4];
+'t'
+>>> str1[-5];
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+>>> str[1]='e';
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'type' object does not support item assignment
+>>>
+
+You cannot change single character but can change entire string.
+>>> str1=100
+>>> type(str1)
+<class 'int'>
+>>>
+
+Slicing:
+[<StartIndex>]:[<EndIndex>][:<StepValue>]
+Step value signifies while groing from start to end by how much to increase. By default its 1.
+>>> institute="Trinaha Solutions"
+>>> institute[4:7]
+'aha'
+>>> institute[4]
+'a'
+>>> institute[4:]
+'aha Solutions'
+>>> institute[4:7:1]
+'aha'
+>>> institute[4:7:2]
+'aa'
+>>> institute[4::2]
+'aaSltos'
+>>> institute[::2]
+'TiaaSltos'
+>>> institute[2:-8]
+'inaha S'
+>>> institute[2:-10]
+'inaha'
+>>> institute[7:2]
+''    >>> institute[4:7:1]
+'aha'
+>>> institute[4:7:2]
+'aa'
+>>> institute[4::2]
+'aaSltos'
+>>> institute[::2]
+'TiaaSltos'
+>>> institute[2:-8]
+'inaha S'
+>>> institute[2:-10]
+'inaha'
+>>> institute[7:2]
+''
+>>> # Start index is greater than end index hence shows nothing
+
+Assignment:
+Write a prog to accept url and print domain name from it. URL format is fixed: www.<DomainName>.com.
+Write a prog to accept a string from user. Replace all occurences of first character with '*' in remaining string.
+e.g. Input = "babble", output = "ba**le"
+

@@ -1,0 +1,57 @@
+Lecture1 Summary
+
+Python History:
+1. Developed by Guido Van Possum in 1989
+2. Named after British comedy group Monty Python
+
+Widely used major release versions: 2.7 and 3.x
+
+Why Python is popular:
+1. Supports Multi-paradigm
+2. Portable(cross platform). Its compiled + interpreted. 
+   Write once run everywhere using PVM (Python Virtual Machine)
+   hello.py ----(Compiled to create)---> hello.pyc. pyc is a pycode (similar to bytecode)
+   hello.pyc is then interpreted by python interpreter to run on actual machine.
+3. Prebuilt large collection of libraries
+4. Smaller the amount of code compared to C/C++/Java
+5. Open source
+
+Python is widely used. Companies like Google, Youtube, DropBox, Cisco, IBM and NASA are using Python.
+Python us used for:
+1. Automation tasks
+2. System Programming
+3. Database programming
+4. Internet Scripting
+5. Game development
+6. IOT etc.
+
+First Program:
+#!/usr/local/bin/python3.7
+print("Hello Universe!!!")
+
+Explanation:
+line 1: #!/usr/local/bin/python3.7
+	This is the “she bang” line. It tells the path of python interpreter which will be used to execute statements after this line.
+
+line2: print("Hello Universe!!!")
+print is inbuilt function to output the arguments on to console.
+
+Notes:
+1.  # - Single line comment
+2. ’’’ ‘’’ OR “”” “”” is used for multiline comment.
+3. Python is case-sensitive.
+4. Editors for Python programming: vim, Notepad++, PyCharm, Eclipse (using PyDev plugin)
+5. Pylint and pep8 tools are used for code formatting of python code. Pep8 is on the way of deprecation. Instead use pycodestyle.
+
+Input acceptance:
+On version 2.x, raw_input is the in-built function to accept input from console. On version 3.x, the function is input.
+Input is stream of bytes. We can use function eval to evaluate the entered stream:
+>>> x=eval(input("Enter String: "))
+Enter String: "123"
+>>> type(x)
+<class 'str'>
+>>> x=eval(input("Enter String: "))
+Enter String: 123
+>>> type(x)
+<class 'int'>
+
