@@ -23,19 +23,19 @@ def main():
 			x,y = eval(input("Enter 2 numbers for addition :: "))
 			print("Addition is :: ",add(x,y))
 
-		if choice == 2 :
+		elif choice == 2 :
 			x,y = eval(input("Enter 2 numbers for subtraction :: "))
 			print("Subtraction is :: ",subtract(x,y))
 			
-		if choice == 3 :
+		elif choice == 3 :
 			x,y = eval(input("Enter 2 numbers for multiplication :: "))
 			print("Multiplication is :: ",multiply(x,y))
 			
-		if choice == 4 :
+		elif choice == 4 :
 			x,y = eval(input("Enter 2 numbers for division :: "))
 			print("Division is :: ",divide(x,y))
 		
-		if choice == 5 :
+		else :
 			break
 	
 if __name__ == '__main__':
