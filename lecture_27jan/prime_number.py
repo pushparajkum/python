@@ -1,3 +1,5 @@
+#! /usr/local/bin/python3
+
 def prime(n, flag):
 	if n%2 == 0:
 		return False
@@ -7,7 +9,7 @@ def prime(n, flag):
 			flag = 0
 			print("The number is not prime..")
 			return False
-	
+
 	if flag == 1:
 		print("The number is prime..")
 
