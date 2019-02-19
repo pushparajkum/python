@@ -1,0 +1,21 @@
+1. WAP to accept entered number even or odd without using arithmetic operator.
+
+2. wap to accept a string from user and print count of consonents from string
+
+3. WAP to accpet a number from user and a bit position to turn-off from the given number.. print number after turning off the bit in decimal.. (eg. 16 (bit pos : 5) ==> 0)
+
+
+Homework ::::
+1. draw mindmap diagram for functions...
+2. wap to accept a number from user and chk if it is divisible by 8 without using arithmetic operators.. (hint: write binaries of divisible by 8 and chk if it follows same pattern)
+3. wap to accept  a number from user and number of bits to turn on from given pos
+4. wap to accept a string which has repetative characters consecutively and optimize the storage space for the same..
+ eg.  aaabbcccccddddddaaa =>> o/p -> a3b2c5d6a3
+5. 
+*******
+*** ***
+**    **
+*      *
+**    **
+***  ***
+********
