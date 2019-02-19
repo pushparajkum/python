@@ -1,0 +1,18 @@
+
+1. wap to accept 2 lists from user and find union of them
+2. wap to accept 2 lists from user and find intersection of them
+3. symmetric difference (except common elements)
+4. wap to chk if 
+	1. list2 is subset of list1
+	2. disjoint
+	3. superset
+
+
+eg..
+
+[1, 7, 11, 15, 21, 50]
+[2, 7, 15, 17]
+
+union = [1, 7, 11, 15, 21, 50, 2, 17]
+intersection = [7, 15]
+symmetric difference = [1,2,11,17,21,50]
