@@ -1,0 +1,3 @@
+1.  wap to accept a sentence which contains uppercase and lowercase words return a dict with count of total number of lowercase and lowercase chars..
+
+2. wap to accept number from user and and return a dictionary of squares from 1 to that number.
