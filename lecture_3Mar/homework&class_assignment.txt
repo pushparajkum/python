@@ -1,0 +1,22 @@
+1. wap to accept a filename from user and print those lines who have less than or equal to 80 chars also print line numbers which have more than 80 chars stating that lines having more than standard count of chars..
+2. wap to accepta file name from user and print smallest and longest line from it
+3. wap prog to accept a filename from user and print line by line
+
+HW ::
+4. wap to accept a filename from user and print those lines which have 'the' word more than once (hint : dictionary split ) (make generic)
+5. wap to accept a filename from user and print it in reverse order. (no lines to be repeated, no readlines, read functions, no list,)
+    (hint: recursive)
+6. wap to accept a configuration file from user and create a dictionary of configurations defined in it. (if line starting with comment ignore the line or if line contains comment in between then also ignore)
+7. wap to accept a filename from user and print alternate 10 chars from it (hint: use read, seek functions)
+    (seek accept 2 params - 0 start, 1 current, 2 end--reverse)
+    (first read then)
+    (
+        >>> fd  = open("read_file_line.py")
+        >>> fd.seek(10,0)
+        10
+        >>> fd.read(10)
+        ' to accept'
+    )
+    ( for opening file in 3.x :::: import io ----then----  io.FileIO(filename))
+
+**** Think about,what steps system must be taking when we call fd.open() ****
