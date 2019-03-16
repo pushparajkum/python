@@ -1,0 +1,261 @@
+*******************************
+Tuple ::
+It is an immutable container. No modifications can be done.
+
+>>> a = (1,2,3,4)
+>>> type(a)
+<class 'tuple'>
+
+>>> l1 = (1,2,3)
+>>> l2= (4,5,6)
+>>> l1+l2
+(1, 2, 3, 4, 5, 6)
+
+>>> l3=(10,)
+>>> l1+l2+l3
+(1, 2, 3, 4, 5, 6, 10)
+
+*******************************
+Set :: 
+It is an Associative container. It internaly performs hashing. It is a set of unique elements.
+it's not an index base iterator container.
+
+>>> x = set("agkhhljkhlkjh")
+>>> type(x)
+<class 'set'>
+>>> x
+{'l', 'a', 'g', 'j', 'k', 'h'}
+
+
+>>> x = set("aiueioqwqbcnoebhkhs")
+>>> x
+{'b', 'c', 'i', 'q', 'e', 'o', 'h', 's', 'w', 'k', 'n', 'a', 'u'}
+>>> x.add("z")
+>>> x
+{'b', 'c', 'i', 'q', 'z', 'e', 'o', 'h', 's', 'w', 'k', 'n', 'a', 'u'}
+>>> x.add("a")
+>>> x
+{'b', 'c', 'i', 'q', 'z', 'e', 'o', 'h', 's', 'w', 'k', 'n', 'a', 'u'}
+
+
+>>> z = set((1,2,3,4,5))
+>>> z
+{1, 2, 3, 4, 5}
+>>> a = set((1,2,6,7,8))
+>>> a
+{1, 2, 6, 7, 8}
+>>> z.difference(a)
+{3, 4, 5}
+>>> z.difference_update(a)
+>>> z
+{3, 4, 5}
+
+
+>>> x = set((1,2,3,4,5,6))
+>>> y= set((1,2,6))
+>>> x - y
+{3, 4, 5}
+
+
+>>> x
+{1, 2, 3, 4, 5, 6}
+>>> x.discard(2)
+>>> x
+{1, 3, 4, 5, 6}
+
+
+>>> x
+{1, 3, 4, 5, 6}
+>>> y
+{1, 2, 6}
+>>> x.intersection(y)
+{1, 6}
+
+>>> x.isdisjoint(y)
+False
+
+>>> x.isdisjoint(([7,8,9]))    --------- instead of writing set((7,8,9))  written ([7,8,9])
+True
+
+
+>>> x.add(2)
+>>> x
+{1, 2, 3, 4, 5, 6}
+>>> y
+{1, 2, 6}
+>>> x.issubset(y)
+False
+>>> y.issubset(x)
+True
+>>> x.issuperset(y)
+True
+>>> y.issuperset(x)
+False
+
+
+>>> x.remove(22)               -------------------- remove gives error if element is not present 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 22
+>>> x.discard(22)
+>>> x
+{1, 2, 3, 4, 5, 6}
+
+
+>>> x
+{1, 2, 3, 4, 5, 6}
+>>> y.add(7)
+>>> y
+{1, 2, 6, 7}
+>>> x.symmetric_difference(y)
+{3, 4, 5, 7}
+
+
+>>> x.union(y)
+{1, 2, 3, 4, 5, 6, 7}
+>>> x.update(y)
+>>> x
+{1, 2, 3, 4, 5, 6, 7}
+>>> y
+{1, 2, 6, 7}
+
+
+>>> y.add(8)
+>>> x | y          ------------- union
+{1, 2, 3, 4, 5, 6, 7, 8}
+>>> x ^ y          -------------- symmetric_difference
+{3, 4, 5, 8}
+>>> x & y         ------------ intersection
+{1, 2, 6, 7}
+
+
+>>> y.discard(8)
+>>> x > y             ------------ superset
+True
+>>> y < x            ------------- subset
+True
+>>> x > x
+False
+>>> x >= x
+True
+
+
+>>> y.add(7)
+>>> x | y        ------------------ union
+{1, 2, 3, 4, 5, 6, 7}
+>>> x |= y       ----------------- update
+>>> x
+{1, 2, 3, 4, 5, 6, 7}
+>>> x - y         ----------------- difference  
+{3, 4, 5}
+>>> x -= y        ---------------- difference update
+>>> x
+{3, 4, 5}
+
+
+>>> x == y
+False
+>>> x == x
+True
+
+
+>>> x = [1,2,3]
+>>> y=[x,4,5,6]
+>>> z = [x,7,8,9]
+>>> x
+[1, 2, 3]
+>>> y
+[[1, 2, 3], 4, 5, 6]
+>>> z
+[[1, 2, 3], 7, 8, 9]
+>>> a = z.copy()			------------------ copy created top level copy (shallow copy). [1,2,3] -- pointing to the same memory in both a and z
+>>> a
+[[1, 2, 3], 7, 8, 9]
+>>> z
+[[1, 2, 3], 7, 8, 9]
+>>> a.append(10)
+>>> a
+[[1, 2, 3], 7, 8, 9, 10]
+>>> z
+[[1, 2, 3], 7, 8, 9]
+
+>>> a[0].append(11)
+>>> a
+[[1, 2, 3, 11], 7, 8, 9, 10]
+>>> z
+[[1, 2, 3, 11], 7, 8, 9]
+
+
+>>> import copy
+>>> c = copy.deepcopy(z)			------------- deepcopy
+>>> c[0].append(100)
+>>> z
+[[1, 2, 3, 11], 7, 8, 9]
+>>> c
+[[1, 2, 3, 11, 100], 7, 8, 9]
+
+
+In 2.7,
+import copy
+copy.deepcopy  ----- creates deep copy
+copy.copy ------ creates shallow copy
+
+
+** read about frozen set and try to invoke the methods.
+
+
+>>> for y in z:
+...     print(y)
+... 
+[1, 2, 3, 11]
+7
+8
+9
+
+
+***************************************
+Dictionary ::
+
+>>> x = {1:2, 3:4}
+>>> x
+{1: 2, 3: 4}
+>>> x[1]
+2
+>>> x[3]
+4
+>>> type(x)
+<class 'dict'>
+>>> x['name'] = "abc"
+>>> x
+{1: 2, 3: 4, 'name': 'abc'}
+>>> x['name']
+'abc'
+
+>>> for key in x:
+...     print(key, x[key])
+... 
+1 2
+3 4
+name abc
+
+------------------ declare a empty dictionary
+>>> x = dict()
+>>> y = {}
+>>> type(x), type(y)
+(<class 'dict'>, <class 'dict'>)
+
+
+>>> x = {1:1, 2:2, 3:3} 
+>>> x
+{1: 1, 2: 2, 3: 3}
+>>> dict.fromkeys(x)
+{1: None, 2: None, 3: None}
+>>> dict.fromkeys(x, {'a', 'b', 'c'})
+{1: {'b', 'c', 'a'}, 2: {'b', 'c', 'a'}, 3: {'b', 'c', 'a'}}
+>>> dict.fromkeys(x, 23)
+{1: 23, 2: 23, 3: 23}
+
+
+wap to implement ur own fromkeys method which ensures if valyue is list, instead of assigning list as value to all keys assign on-one element from list to the corresponding key.
+ -- if no of keys more assign none
+  --- if values are more ignore extra values

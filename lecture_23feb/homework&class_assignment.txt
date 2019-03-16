@@ -1,0 +1,5 @@
+read about frozen set and try to invoke the methods.
+
+wap to implement ur own fromkeys method which ensures if valyue is list, instead of assigning list as value to all keys assign on-one element from list to the corresponding key.
+ -- if no of keys more assign none
+  --- if values are more ignore extra values

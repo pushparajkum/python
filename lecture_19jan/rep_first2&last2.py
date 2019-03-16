@@ -2,6 +2,8 @@
 eg. string ==> stng'''
 
 string1 = input("Enter a string : ")
+if len(string1) < 2
+	return ''
 strlen = len(string1)
 str1 = string1[0:2]
 str2 = string1[strlen-2:strlen]

@@ -1,0 +1,23 @@
+>>> import os
+>>> objStat= os.stat("git_steps.txt")
+>>> objStat
+os.stat_result(st_mode=33204, st_ino=6036936, st_dev=2058, st_nlink=1, st_uid=1000, st_gid=1000, st_size=309, st_atime=1550547555, st_mtime=1548784553, st_ctime=1548784553)
+>>> 
+
+
+
+pushparaj@pushparaj-Inspiron-3542:~/python/lecture_16Mar$ python3 args_parse.py -i file_stat.txt -d tmp.txt -n 2
+['args_parse.py', '-i', 'file_stat.txt', '-d', 'tmp.txt', '-n', '2']
+File copy successful
+
+
+
+pushparaj@pushparaj-Inspiron-3542:~/python/lecture_16Mar$ python3 args_parse.py -h
+['args_parse.py', '-h']
+usage: args_parse.py [-h] -i I -d D [-n N]
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -i I        Input/Source file name
+  -d D        Destination file name
+  -n N        Number of lines to be copied, default=0

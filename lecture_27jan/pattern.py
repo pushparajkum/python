@@ -10,11 +10,11 @@ def pattern(n):
 	for x in range(1, n+1):
 		while x != 0:
 			x -= 1
-			print('*'),
+			print('*', end='')
 		print("")
 
 def main():
-	n = input("Enter the number of lines to be printed :: ")
+	n = eval(input("Enter the number of lines to be printed :: "))
 	pattern(n)
 
 if __name__ == '__main__':

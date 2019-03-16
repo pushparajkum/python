@@ -15,12 +15,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
-'''
-def reverse_container(l1):
-	if len(l1) == 0
-		if type(l1) == str:
-			return l1
-		return list()
-	
-'''
