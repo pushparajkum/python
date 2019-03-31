@@ -1,0 +1,34 @@
+>>> import pickle
+>>> a = {1:1, 2:2, 3:3}
+>>> ser_obj = pickle.dumps(a)
+>>> ser_obj
+b'\x80\x03}q\x00(K\x01K\x01K\x02K\x02K\x03K\x03u.'
+>>> deser_obj = pickle.loads(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: a bytes-like object is required, not 'dict'
+>>> deser_obj = pickle.loads(ser_obj)
+>>> deser_obj
+{1: 1, 2: 2, 3: 3}
+
+
+
+>>> import openpyxl
+>>> from openpyxl import load_workbook
+>>> wb = load_workbook(filename = 'names_input.xlsx')
+>>> sheet_ranges = wb['range names']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/pushparaj/.local/lib/python3.6/site-packages/openpyxl/workbook/workbook.py", line 277, in __getitem__
+    raise KeyError("Worksheet {0} does not exist.".format(key))
+KeyError: 'Worksheet range names does not exist.'
+>>> sheet_ranges = wb['Jeevan Jawalkar']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/pushparaj/.local/lib/python3.6/site-packages/openpyxl/workbook/workbook.py", line 277, in __getitem__
+    raise KeyError("Worksheet {0} does not exist.".format(key))
+KeyError: 'Worksheet Jeevan Jawalkar does not exist.'
+>>> sheet_ranges = wb['Sheet1']
+>>> print(sheet_ranges['B3'].value)
+jeevanjawalkar85@gmail.com
+>>> 

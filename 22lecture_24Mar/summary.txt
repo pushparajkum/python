@@ -1,0 +1,84 @@
+>>> import subprocess
+>>> subprocess.call('dir',shell=True)
+16&17lecture_3&9Mar  21lecture_23Mar		   git_steps.txt  lecture_16feb  lecture_26jan	lecture_3feb	    README.md
+18lecture_10Mar      22lecture_24Mar		   lecture_06Jan  lecture_17feb  lecture_27jan	lecture_9feb
+19lecture_16Mar      assignments		   lecture_12jan  lecture_19jan  lecture_2feb	lectures_summary
+20lecture_17Mar      configparsercfgandpyfile.zip  lecture_13jan  lecture_23feb  lecture_2Mar	Python_Lectures_JB
+0
+>>> subprocess.call('ls',shell=True)
+'16&17lecture_3&9Mar'   21lecture_23Mar		       git_steps.txt   lecture_16feb   lecture_26jan   lecture_3feb	    README.md
+ 18lecture_10Mar        22lecture_24Mar		       lecture_06Jan   lecture_17feb   lecture_27jan   lecture_9feb
+ 19lecture_16Mar        assignments		       lecture_12jan   lecture_19jan   lecture_2feb    lectures_summary
+ 20lecture_17Mar        configparsercfgandpyfile.zip   lecture_13jan   lecture_23feb   lecture_2Mar    Python_Lectures_JB
+0
+>>> subprocess.call('dir')
+16&17lecture_3&9Mar  21lecture_23Mar		   git_steps.txt  lecture_16feb  lecture_26jan	lecture_3feb	    README.md
+18lecture_10Mar      22lecture_24Mar		   lecture_06Jan  lecture_17feb  lecture_27jan	lecture_9feb
+19lecture_16Mar      assignments		   lecture_12jan  lecture_19jan  lecture_2feb	lectures_summary
+20lecture_17Mar      configparsercfgandpyfile.zip  lecture_13jan  lecture_23feb  lecture_2Mar	Python_Lectures_JB
+0
+>>> subprocess.call('ls')
+'16&17lecture_3&9Mar'   21lecture_23Mar		       git_steps.txt   lecture_16feb   lecture_26jan   lecture_3feb	    README.md
+ 18lecture_10Mar        22lecture_24Mar		       lecture_06Jan   lecture_17feb   lecture_27jan   lecture_9feb
+ 19lecture_16Mar        assignments		       lecture_12jan   lecture_19jan   lecture_2feb    lectures_summary
+ 20lecture_17Mar        configparsercfgandpyfile.zip   lecture_13jan   lecture_23feb   lecture_2Mar    Python_Lectures_JB
+0
+>>> subprocess.call('cp')
+cp: missing file operand
+Try 'cp --help' for more information.
+1
+>>> subprocess.check_call('cp')
+cp: missing file operand
+Try 'cp --help' for more information.
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib/python3.6/subprocess.py", line 291, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'cp' returned non-zero exit status 1.
+>>> subprocess.check_output('cp')
+cp: missing file operand
+Try 'cp --help' for more information.
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib/python3.6/subprocess.py", line 336, in check_output
+    **kwargs).stdout
+  File "/usr/lib/python3.6/subprocess.py", line 418, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command 'cp' returned non-zero exit status 1.
+>>> x = subprocess.check_output('dir', shell=True)
+>>> x
+b'16&17lecture_3&9Mar  21lecture_23Mar\t\t   git_steps.txt  lecture_16feb  lecture_26jan\tlecture_3feb\t    README.md\n18lecture_10Mar      22lecture_24Mar\t\t   lecture_06Jan  lecture_17feb  lecture_27jan\tlecture_9feb\n19lecture_16Mar      assignments\t\t   lecture_12jan  lecture_19jan  lecture_2feb\tlectures_summary\n20lecture_17Mar      configparsercfgandpyfile.zip  lecture_13jan  lecture_23feb  lecture_2Mar\tPython_Lectures_JB\n'
+>>> subprocess.call(['cp', 'git_steps.txt', '22lecture_24Mar'])
+0
+
+
+>>> proc = subprocess.Popen(['echo', '"to stdout"'], stdout= subprocess.PIPE)
+>>> stdout_value = proc.communicate()[0]
+>>> print('\tstdout: ', repr(stdout_value))
+	stdout:  b'"to stdout"\n'
+
+
+>>> print('\nwrite')
+
+write
+>>> proc = subprocess.Popen(['cat','-'], stdin = subprocess.PIPE)
+>>> proc.communicate('\tJay jay ram krishna hari to stdin\n')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib/python3.6/subprocess.py", line 828, in communicate
+    self._stdin_write(input)
+  File "/usr/lib/python3.6/subprocess.py", line 781, in _stdin_write
+    self.stdin.write(input)
+TypeError: a bytes-like object is required, not 'str'
+
+>>> proc.communicate(b'\tJay jay ram krishna hari to stdin\n')
+	Jay jay ram krishna hari to stdin
+(None, None)
+
+
+** HW :: WAP to accept a cmd to be executed on command line or as a command line argument..
+        execute the command provided and print the output of the same
+** HW :: WAP to explore psutil module (import psutil) (psutil added by google same as subprocess)
+         - (ex print complete process list) (psutil.ps)
+        (import os => os.getpid())
+        print process handle 
