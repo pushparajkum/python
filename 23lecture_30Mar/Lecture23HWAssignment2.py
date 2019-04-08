@@ -6,6 +6,8 @@ class BankAccount:
     minAccountBalance = 1000
     def __init__(self, initialBalance):
         self.__balance = initialBalance
+        self.__accountNo = BankAccount.accountNumber
+        BankAccount.accountNumber += 1
     
     def __del__(self):
         del self.__balance
