@@ -101,9 +101,39 @@ class StudentManager:
             stud.UpdateMarks(subject, marks)
             return True
         return False
-    
+
     def getMarks(self,rollNo):
         return self.__enrolledStudents[rollNo].getMarks()
+
+    def updateAddress(self, rollNo, address):
+        if rollNo in self.__enrolledStudents:
+            stud = self.__enrolledStudents[rollNo]
+            stud.UpdateAddress(address)
+            return True
+        return False
+
+    def getAddress(self,rollNo):
+        return self.__enrolledStudents[rollNo].getAddr()
+
+    def updateDiv(self, rollNo, div):
+        if rollNo in self.__enrolledStudents:
+            stud = self.__enrolledStudents[rollNo]
+            stud.UpdateDivision(div)
+            return True
+        return False
+
+    def getDiv(self,rollNo):
+        return self.__enrolledStudents[rollNo].getDivision()
+
+    def updateCourse(self, rollNo, course):
+        if rollNo in self.__enrolledStudents:
+            stud = self.__enrolledStudents[rollNo]
+            stud.UpdateCourse(course)
+            return True
+        return False
+
+    def getCourse(self,rollNo):
+        return self.__enrolledStudents[rollNo].getCourse()
 
 def unitTestStudentManager():
     studMgr = StudentManager(3)
@@ -127,12 +157,30 @@ def unitTestStudentManager():
     for st2 in students:
         print("\n",students[st2])
     
+    print("\n\nUpdate Marks, course, division and address : ")
     studMgr.updateMarks(1,"Science",94)
     print(studMgr.getMarks(1))
 
+    studMgr.updateCourse(1,"BCA")
+    print(studMgr.getCourse(1))
+
+    studMgr.updateDiv(1,"D")
+    print(studMgr.getDiv(1))
+
+    studMgr.updateAddress(1,"Mumbai")
+    print(studMgr.getAddress(1))
+
 def main():
     # unitTestStudent()
-    unitTestStudentManager()
+    #unitTestStudentManager()
+
+    studMgr = StudentManager(3)
+    studMgr.enrollStudent("Raj","Chinchwad","06-09-1989","MCA","A")
+    studMgr.enrollStudent("Pushp","Pune","04-02-1991","MCs","B")
+    studMgr.enrollStudent("Pushparaj","Mumbai","12-10-1992","MBA","C")
+
+    while(1):
+        print("Enter your choice : \n1. Enroll Student \n2. Suspend Student \n3. ")
 
 if __name__ == "__main__":
     main()
