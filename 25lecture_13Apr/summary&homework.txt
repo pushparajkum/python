@@ -1,0 +1,10 @@
+HomeWork ::::
+1. Employee management system
+2. design and implement Library Management System
+    - book
+    - subscribers
+    - manager
+    - queue for books 
+
+hierarchical inheritance :
+- In 2.x,
