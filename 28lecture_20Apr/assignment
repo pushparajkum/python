@@ -1,0 +1,3 @@
+wap to accept multiple email id's from user and print whether all the email id's valid or not.
+(refine code to include . in the email)
+wap to read a file from user and print all email id's in it. (refine logic to include any number of . present)
