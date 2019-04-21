@@ -1,0 +1,24 @@
+Homework ::::
+1. wap to accept a filename from user and print all verbs in it. (ending with ly or ing)
+(\w+\bing | \w+\bly)
+
+2. WAP to accept a filename from user and print all words having end in between 
+(eg. Jeetendra, coincidence) (hint: use \B)
+
+3. WAP to accpet a filename from user and delete comments from it. 
+(both singleline and multiline) (start with # end with \n)
+(start with ''' or """ ends with ''' or """ including \n in between)
+[1. read  2. put file in buffer  3. read singleline comment  4. read multiline comment  5. close file]
+
+4. WAP to accept a filename from user and print all wordsstarting with capital letters.
+
+********* READ PRESENTATION 10 *******
+
+from "python_re" assignments presentation (patterns)
+1. either a or b  ==>  a | b  or [ab]
+2. a followed by one or more a or b  ==>  a[ab]+
+3. a followed by one or more a or b, not greedy  ==>  a[ab]+? 
+4. sequences without -, ., or space  ==>  [^-. ]
+4. sequences of lower case letters  ==>  [a-z]+   
+5. sequences of upper case letters  ==>  [A-Z]+
+6. sequences of lower or upper case letters  ==>>  [A-Z][a-z]+
