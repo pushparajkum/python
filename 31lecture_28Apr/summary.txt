@@ -1,0 +1,13 @@
+Sockets : 
+    connection oriented (TCP) & connection less (UDP)
+
+
+AF_INET & AF_UNIX
+
+
+UI using python::
+QTPY or PYQT
+TKInter
+
+
+** WAP to fetch the info abt current share price of a given company name.
